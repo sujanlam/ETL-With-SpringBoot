@@ -1,5 +1,6 @@
-package com.excel_data;
+package com.excel_data.controller;
 
+import com.excel_data.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +12,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/employees")
-public class EmployeeController {
+public class JobController {
 
     @Autowired
-    private EmployeeService employeeService;
+    private JobService employeeService;
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
